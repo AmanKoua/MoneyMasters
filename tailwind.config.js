@@ -18,13 +18,14 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                prodPrimary: "#edf4fc",
-                prodSecondary: "#add0f7",
-                prodMainArea: "#c5d2e0",
-                prodBackground: "#F8FBFF",
-                prodError: "#f59a9a",
-                prodMessage: "#c4ffc4",
-                prodWarning: "#fe5d5d",
+                moneyBackgroundBlue: "#E7F1FF",
+                moneyLightBlue: "#1DBBFF",
+                moneyLimeGreen: "#61FF5E",
+                moneyYellow: "#FFEA2A",
+                moneyDarkGreen: "#00B607",
+                moneyError: "#f59a9a",
+                moneyMessage: "#c4ffc4",
+                moneyWarning: "#fe5d5d",
             },
         },
     },
