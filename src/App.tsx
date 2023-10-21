@@ -9,6 +9,7 @@ import {
 
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
 
 import "./styles.css";
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/home" element={<Home />} />
             </Routes>
           </div>
         </BrowserRouter>
