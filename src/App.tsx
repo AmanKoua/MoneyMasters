@@ -19,7 +19,6 @@ function App() {
       <div className="w-full h-screen scroll-smooth bg-gradient-to-b from-white via-white to-moneyBackgroundBlue overflow-y-hidden">
         <BrowserRouter>
           <Navbar></Navbar>
-
           <div>
             <Routes>
               <Route path="/login" element={<Login></Login>} />

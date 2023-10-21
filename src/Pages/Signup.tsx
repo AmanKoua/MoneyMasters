@@ -22,7 +22,7 @@ const Signup = () => {
           <p>Username</p>
           <input
             type="text"
-            placeholder="Enter your email"
+            placeholder="Enter your username"
             className="w-3/4 bg-gray-300"
           />
         </div>
@@ -36,19 +36,14 @@ const Signup = () => {
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto mt-3">
           <button className="bg-moneyDarkGreen w-full text-4xl pb-2 shadow-md">
-            Login
+            Signup
           </button>
-        </div>
-      </div>
-      <div className="">
-        <div className="w-max ml-auto mr-auto mt-10">
-          <p className="">Forgot password?</p>
         </div>
       </div>
       <div className="">
         <div className="w-4/12 ml-auto mr-auto mt-10 flex flex-row justify-around">
           <div className="">
-            <p className="text-2xl">New Here?</p>
+            <p className="text-2xl">Returning User?</p>
           </div>
           <div className=" w-1/4 h-max">
             <button className="bg-moneyDarkGreen w-full h-full text-xl pb-1 shadow-md">

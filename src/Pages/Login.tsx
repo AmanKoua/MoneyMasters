@@ -44,7 +44,7 @@ const Login = () => {
           </div>
           <div className=" w-1/4 h-max">
             <button className="bg-moneyDarkGreen w-full h-full text-xl pb-1 shadow-md">
-              Login
+              Signup
             </button>
           </div>
         </div>
