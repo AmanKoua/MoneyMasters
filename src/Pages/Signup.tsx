@@ -19,6 +19,14 @@ const Signup = () => {
           />
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto p-2 flex flex-row justify-between">
+          <p>Username</p>
+          <input
+            type="text"
+            placeholder="Enter your email"
+            className="w-3/4 bg-gray-300"
+          />
+        </div>
+        <div className="w-3/4 h-max ml-auto mr-auto p-2 flex flex-row justify-between">
           <p>Password</p>
           <input
             type="text"
