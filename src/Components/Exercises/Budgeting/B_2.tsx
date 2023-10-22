@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import {Link} from 'react-router-dom'
 interface Category {
     name: string;
     allocated: number;
@@ -10,9 +10,11 @@ const B_2: React.FC = () => {
     const initialCategories: Category[] = [
         { name: 'Housing', allocated: 0 },
         { name: 'Entertainment', allocated: 0 },
-        { name: 'Groceries', allocated: 0 }
+        { name: 'Groceries', allocated: 0 },
+        { name: 'Utilities', allocated: 0 },
+        { name: 'Bank/Savings', allocated: 0 },
     ];
-    const [balance, setBalance] = useState(3000);
+    const [balance, setBalance] = useState(500);
     const [categories, setCategories] = useState(initialCategories);
 
     const handleAllocate = (index: number, amount: number) => {
@@ -24,9 +26,10 @@ const B_2: React.FC = () => {
         }
     };
 
+    const bankSavings = categories.find(cat => cat.name === 'Bank/Savings');
     return (
         <div className="bg-slate-100 p-4">
-            <p className='mb-3 font-bold text-xl border-b border-black overflow-y-scroll'>How to Budget</p>
+            <p className='mb-3 font-bold text-xl border-b border-black'>How to Budget</p>
             
             
             <div className='bg-slate-200 p-4 rounded-xl mt-4'>
@@ -70,11 +73,19 @@ const B_2: React.FC = () => {
 
             
             {openQuiz1 && (
-                <div className="bg-red-500 mt-4 p-4 rounded-xl" style={{marginTop:"-0px"}}>
+                <div className="bg-slate-200 mt-10 p-4 rounded-xl" >
                     <h3 className="text-center text-2xl border-b border-black mb-4">Activity</h3>
                     <span className="text-xl">Balance: ${balance}</span>
                     <div className="mt-4">
-                        {categories.map((category, index) => (
+                        
+
+                        {balance===0?
+                        <div className="bg-slate-300 px-4 py-2 rounded-md">
+                            Saved: ${bankSavings?.allocated}, Well Done!
+                            <Link to="/modules/budgeting/ex3" className='flex bg-moneyDarkGreen pr-5 pl-5 rounded-xl mt-5 ml-auto mr-auto p-3'>Next</Link>
+                        </div>
+                        
+                        :categories.map((category, index) => (
                             <div key={index} className="mb-3">
                                 <p>{category.name}: ${category.allocated}</p>
                                 <button 
@@ -88,6 +99,7 @@ const B_2: React.FC = () => {
                     </div>
                 </div>
             )}
+
 
 
         </div>
