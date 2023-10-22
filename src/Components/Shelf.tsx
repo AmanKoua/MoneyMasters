@@ -2,7 +2,7 @@ import styles from "./Shelf.module.css";
 
 const Shelf = ({ children }) => {
   return (
-    <div className="mt-10 shadow-xl">
+    <div className="mt-10 ">
       <p className={styles.text}>{children}</p>
     </div>
   );
