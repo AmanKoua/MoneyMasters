@@ -11,6 +11,7 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
+import AboutUs from "./Pages/AboutUs";
 
 import "./styles.css";
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/aboutus" element={<AboutUs />} />
             </Routes>
           </div>
         </BrowserRouter>

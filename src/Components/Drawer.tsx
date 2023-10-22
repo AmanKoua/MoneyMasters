@@ -1,14 +1,19 @@
 import styles from "./Drawer.module.css";
+import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
 const Drawer = () => {
   return (
     <div className={styles.navbar}>
-      <Shelf>HOME</Shelf>
+      <Link to="/home">
+        <Shelf>HOME</Shelf>
+      </Link>
       <Shelf>MODULES</Shelf>
       <Shelf>PORTFOLIO</Shelf>
       <Shelf>LEADERBOARD</Shelf>
       <Shelf>COMMUNITY</Shelf>
-      <Shelf>ABOUT US</Shelf>
+      <Link to="/aboutus">
+        <Shelf>ABOUT US</Shelf>
+      </Link>
     </div>
   );
 };
