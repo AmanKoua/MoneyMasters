@@ -9,7 +9,7 @@ import IbrahimImg from "../assets/Ibrahim.jpg";
 const AboutUs = () => {
   return (
     <div>
-      <div className="w-full flex flex-row">
+      <div className="w-full h-screen flex flex-row">
         <Drawer></Drawer>
         <div className=" w-3/4 ml-auto h-screen">
           <h1 className=" w-max h-max text-5xl ml-auto mr-auto">About Us</h1>
@@ -27,9 +27,9 @@ const AboutUs = () => {
                 </div>
                 <div className="bg-gray-200 w-full h-max ml-auto mr-auto mt-2 p-2 rounded-lg">
                   <h1 className="text-lg text-center">
-                    opemipo olagoke is a software engineer who will need to fill
-                    out this sample text before we deploy the website and before
-                    we end up finishing after the 2 day period
+                    Opemipo olagoke is a software engineer with a passion for
+                    frontend development with React, tailwindcss, and other
+                    technologies. He is a proud wolverine at UMD.
                   </h1>
                 </div>
               </div>
@@ -78,9 +78,10 @@ const AboutUs = () => {
                 </div>
                 <div className="bg-gray-200 w-full h-max ml-auto mr-auto mt-2 p-2 rounded-lg">
                   <h1 className="text-lg text-center">
-                    ibrahim hussaini is a software engineer who will need to
-                    fill out this sample text before we deploy the website and
-                    before we end up finishing after the 2 day period
+                    A student doing their masters in ai, curious to learn how
+                    machine learning can impact the future. Having experience
+                    with creating forecasting models that lead into the
+                    finanancial sector.
                   </h1>
                 </div>
               </div>

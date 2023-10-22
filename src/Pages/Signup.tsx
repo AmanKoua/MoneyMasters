@@ -16,7 +16,7 @@ const Signup = () => {
   const [message, setMessage] = useState("");
 
   return (
-    <div className="h-full">
+    <div className="h-screen">
       {/*This is the div for the login page*/}
       <div className=" w-full h-max mt-20">
         <h1 className="w-max ml-auto mr-auto mt-auto mb-auto text-3xl font-bold">

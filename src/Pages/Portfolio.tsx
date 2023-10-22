@@ -19,9 +19,9 @@ const Portfolio = () => {
 
   return (
     <div>
-      <div className="w-full flex flex-row">
+      <div className="w-full h-screen flex flex-row">
         <Drawer></Drawer>
-        <div className=" w-3/4 ml-auto h-screen">
+        <div className=" w-3/4 ml-auto h-max">
           <h1 className=" w-max h-max text-5xl ml-auto mr-auto">Portfolio</h1>
           <div className="h-full pr-5">
             <div className="bg-gray-200 h-16 flex flex-row justify-around mt-5">
