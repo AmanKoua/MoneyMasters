@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ProfileContext } from "../Context/ProfileContext";
+import { backendURL } from "../Context/EnvironmentContext";
 
 const Signup = () => {
   const navigate = useNavigate();
+
+  const userProfile = useContext(ProfileContext);
+
+  const [userEmail, setUserEmail] = useState("");
+  const [userUserName, setUserUserName] = useState("");
+  const [userPass, setUserPass] = useState("");
+
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
     <div className="h-full">
@@ -60,6 +71,16 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      {error && (
+        <div className="ag bg-moneyError w-3/12 ml-auto mr-auto mt-3 border-2 border-red-600 text-center">
+          {error}
+        </div>
+      )}
+      {message && (
+        <div className="ag bg-moneyMessage w-3/12 ml-auto mr-auto mt-3 border-2 border-green-600 text-center">
+          {message}
+        </div>
+      )}
     </div>
   );
 };
