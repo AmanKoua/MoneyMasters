@@ -3,7 +3,7 @@ const { ObjectId } = require("mongodb");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 
-// const userProfile = require("./userProfileModel");
+const UserProfile = require("./userProfile");
 
 const Schema = mongoose.Schema;
 
@@ -19,10 +19,17 @@ const userSchema = new Schema({
         required: false,
         unique: false,
     },
+
     password: {
         type: String,
         required: true,
-    }
+    },
+
+    userProfileId: {
+        type: ObjectId,
+        required: false,
+        unique: false
+    },
 
 });
 
@@ -46,9 +53,10 @@ userSchema.statics.signup = async function (email, password, userName) {
     const hash = await bcrypt.hash(password, salt);
     const user = await this.create({ email, password: hash, userName })
 
-    // Need to create : User profile (which will create friends list and action items list)
+    // TODO : Need to create : User profile (which will create friends list and action items list)
 
-    // const newUserProfile = await userProfile.initialize(user._id);
+    const newUserProfile = await UserProfile.initialize(user._id);
+    await user.updateOne({ userProfileId: newUserProfile._id });
 
     return user;
 }
