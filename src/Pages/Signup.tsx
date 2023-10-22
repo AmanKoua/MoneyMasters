@@ -28,28 +28,75 @@ const Signup = () => {
           <p>Email</p>
           <input
             type="text"
+            value={userEmail}
             placeholder="Enter your email"
             className="w-3/4 bg-gray-300"
+            onChange={(e) => {
+              setUserEmail(e.target.value);
+            }}
           />
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto p-2 flex flex-row justify-between">
           <p>Username</p>
           <input
             type="text"
+            value={userUserName}
             placeholder="Enter your username"
             className="w-3/4 bg-gray-300"
+            onChange={(e) => {
+              setUserUserName(e.target.value);
+            }}
           />
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto p-2 flex flex-row justify-between">
           <p>Password</p>
           <input
-            type="text"
+            type="password"
+            value={userPass}
             placeholder="Enter your password"
             className="w-3/4 bg-gray-300"
+            onChange={(e) => {
+              setUserPass(e.target.value);
+            }}
           />
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto mt-3">
-          <button className="bg-moneyDarkGreen w-full text-4xl pb-2 shadow-md">
+          <button
+            className="bg-moneyDarkGreen w-full text-4xl pb-2 shadow-md"
+            onClick={async () => {
+              setError("");
+              setMessage("");
+
+              const response = await fetch(`${backendURL}/user/signup`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  email: userEmail,
+                  username: userUserName,
+                  password: userPass,
+                }),
+              });
+
+              const json = await response.json();
+
+              if (response.ok) {
+                setMessage("Sucessfully created account!");
+                let responsePayload = {
+                  payload: json.payload,
+                  token: json.token,
+                };
+                userProfile.dispatch({ type: "SET", payload: responsePayload });
+
+                setTimeout(() => {
+                  navigate("/");
+                }, 1000);
+              } else {
+                setError("Account creation failed!");
+              }
+            }}
+          >
             Signup
           </button>
         </div>
