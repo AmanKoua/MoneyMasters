@@ -11,9 +11,9 @@ const Navbar = () => {
 
   return (
     <div className="flex flex-row">
-      <div className="h-14 w-full flex flex-row">
-        <img src={logo} className="w-14" />
-        <div className="w-max h-max mt-auto mb-auto text-2xl ml-5">
+      <div className="h-18 w-full flex flex-row">
+        <img src={logo} className="w-20" />
+        <div className="w-max h-max mt-auto mb-auto text-3xl ml-5">
           MoneyMasters
         </div>
       </div>
