@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="h-full">
       {/*This is the div for the login page*/}
@@ -46,7 +49,12 @@ const Signup = () => {
             <p className="text-2xl">Returning User?</p>
           </div>
           <div className=" w-1/4 h-max">
-            <button className="bg-moneyDarkGreen w-full h-full text-xl pb-1 shadow-md">
+            <button
+              className="bg-moneyDarkGreen w-full h-full text-xl pb-1 shadow-md"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
               Login
             </button>
           </div>
