@@ -14,6 +14,7 @@ import Navbar from "./Components/Navbar";
 import AboutUs from "./Pages/AboutUs";
 import Leaderboard from "./Pages/Leaderboard";
 import ErrorPage from "./Pages/errorPage";
+import Portfolio from "./Pages/Portfolio";
 import ModulePage from "./Pages/ModulePage";
 import BudgetingPage from "./Pages/BudgetingPage";
 
@@ -32,6 +33,7 @@ function App() {
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/" element={<Home />} />
+<<<<<<< HEAD
               <Route path="/aboutus" element={<AboutUs />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="/modules" element={<ModulePage />} />
@@ -41,6 +43,12 @@ function App() {
                 <Route path="ex2" element={<B_2/>} />
               </Route>
 
+=======
+              <Route path="/modules" element={<ModulePage />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/aboutus" element={<AboutUs />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+>>>>>>> f48c18372524ac284af1486859c995d986206e46
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>
