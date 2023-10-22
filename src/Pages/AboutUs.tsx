@@ -43,15 +43,16 @@ const AboutUs = () => {
                 </div>
                 <div className="bg-gray-200 w-full h-max ml-auto mr-auto mt-2 p-2 rounded-lg">
                   <h1 className="text-lg text-center">
-                    Aman Koua is a software engineer who will need to fill out
-                    this sample text before we deploy the website and before we
-                    end up finishing after the 2 day period
+                    Aman Koua is a full-stack developer currently seeking
+                    full-time opportunities. He also utilized his skills to
+                    develop his personal music production feedback forum
+                    http://prodlodge.com.
                   </h1>
                 </div>
               </div>
             </div>
             <div className=" h-1/2 flex flex-row justify-around mt-10 mb-10">
-              <div className="w-4/12">
+              <div className="w-4/12 mt-12">
                 <img
                   src={MinhImg}
                   className="w-48 ml-auto mr-auto rounded-full"
@@ -61,13 +62,13 @@ const AboutUs = () => {
                 </div>
                 <div className="bg-gray-200 w-full h-max ml-auto mr-auto mt-2 p-2 rounded-lg">
                   <h1 className="text-lg text-center">
-                    Minh Nguyen is a software engineer who will need to fill out
-                    this sample text before we deploy the website and before we
-                    end up finishing after the 2 day period
+                    A sophomore embarks on his first hackathon, eagerly
+                    absorbing new knowledge and nurturing a dream to one day
+                    become a computer scientist.
                   </h1>
                 </div>
               </div>
-              <div className="w-4/12">
+              <div className="w-4/12 mt-12">
                 <img
                   src={IbrahimImg}
                   className="w-48 ml-auto mr-auto rounded-full"
@@ -85,7 +86,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-3/4 h-max ml-auto mr-auto mt-1 flex flex-row justify-around">
-              <p className="text-center text-xl mt-10">
+              <p className="text-center text-xl mt-36">
                 The misson of MoneyMasters is to create a place where people can
                 learn about financial concepts to become more financially
                 literate. The project, developed during the UM-Dearborn's 2023
