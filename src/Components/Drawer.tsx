@@ -4,14 +4,16 @@ import Shelf from "./Shelf";
 const Drawer = () => {
   return (
     <div className={styles.navbar}>
-      <Link to="/home">
+      <Link to="/">
         <Shelf>HOME</Shelf>
       </Link>
       <Link to="/modules">
       <Shelf>MODULES</Shelf>
       </Link>
       <Shelf>PORTFOLIO</Shelf>
-      <Shelf>LEADERBOARD</Shelf>
+      <Link to="/leaderboard">
+        <Shelf>LEADERBOARD</Shelf>
+      </Link>
       <Shelf>COMMUNITY</Shelf>
       <Link to="/aboutus">
         <Shelf>ABOUT US</Shelf>
