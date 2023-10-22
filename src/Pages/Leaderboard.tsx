@@ -1,7 +1,13 @@
 import React from "react";
+import { useContext } from "react";
 import Drawer from "../Components/Drawer";
 
+import { ProfileContext } from "../Context/ProfileContext";
+
 const Leaderboard = () => {
+  const userProfile = useContext(ProfileContext);
+  console.log(userProfile);
+
   return (
     <div>
       <div className="w-full flex flex-row">
