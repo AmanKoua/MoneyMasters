@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { ProfileContext } from "../Context/ProfileContext";
+
 import logo from "../assets/MoneyMastersLogo.jpg";
 
 const Navbar = () => {
   const location = useLocation();
+  const profileContext = useContext(ProfileContext);
   const pagesWithoutProfileImg = ["/login", "/signup"];
   const isPageWithoutProfileImg = pagesWithoutProfileImg.includes(
     location.pathname
   );
+
+  const userItem = localStorage.getItem("user");
 
   // TODO : Implement logic to logout user and change button text depending on authentication status
 
@@ -22,9 +27,24 @@ const Navbar = () => {
       {!isPageWithoutProfileImg && (
         <div className="bg-gray-300 w-max h-10 mr-5 mt-auto mb-auto pl-2 pr-2 rounded-md shadow-md">
           <div className="w-max h-max mt-2">
-            <Link to="/login">
-              <p className="">Logout</p>
-            </Link>
+            {userItem && (
+              <Link to="/login">
+                <p
+                  className=""
+                  onClick={() => {
+                    profileContext.dispatch({ type: "DELETE", payload: {} });
+                    localStorage.removeItem("user");
+                  }}
+                >
+                  Logout
+                </p>
+              </Link>
+            )}
+            {!userItem && (
+              <Link to="/login">
+                <p>Login</p>
+              </Link>
+            )}
           </div>
         </div>
       )}
