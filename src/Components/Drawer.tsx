@@ -8,9 +8,11 @@ const Drawer = () => {
         <Shelf>HOME</Shelf>
       </Link>
       <Link to="/modules">
-      <Shelf>MODULES</Shelf>
+        <Shelf>MODULES</Shelf>
       </Link>
-      <Shelf>PORTFOLIO</Shelf>
+      <Link to="/portfolio">
+        <Shelf>PORTFOLIO</Shelf>
+      </Link>
       <Link to="/leaderboard">
         <Shelf>LEADERBOARD</Shelf>
       </Link>
