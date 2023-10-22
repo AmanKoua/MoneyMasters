@@ -22,7 +22,9 @@ const Navbar = () => {
       {!isPageWithoutProfileImg && (
         <div className="bg-gray-300 w-max h-10 mr-5 mt-auto mb-auto pl-2 pr-2 rounded-md shadow-md">
           <div className="w-max h-max mt-2">
-            <p className="">Logout</p>
+            <Link to="/login">
+              <p className="">Logout</p>
+            </Link>
           </div>
         </div>
       )}
