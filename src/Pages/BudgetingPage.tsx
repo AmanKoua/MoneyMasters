@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 const BudgetingPage = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      navigate("/login");
-    }
-  }, []);
+//   useEffect(() => {
+//     const user = localStorage.getItem("user");
+//     if (!user) {
+//       navigate("/login");
+//     }
+//   }, []);
 
   return (
     <>

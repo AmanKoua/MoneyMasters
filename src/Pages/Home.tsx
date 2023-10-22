@@ -6,12 +6,8 @@ import styles from "./Home.module.css";
 const Home = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
     const user = localStorage.getItem("user");
-    if (!user) {
-      navigate("/login");
-    }
-  }, []);
+
 
   return (
     <div className={styles.Home}>
@@ -22,7 +18,7 @@ const Home = () => {
             Embark on your financial learning journey today and discover the
             essential tools and knowledge to master your finances.
           </p>
-          <button className="bg-moneyDarkGreen m-6 p-3 w-2/6 ml-auto mr-auto shadow-xl text-xl">
+          <button onClick={()=>!user?navigate("/login"):navigate("/modules")} className="bg-moneyDarkGreen m-6 p-3 w-2/6 ml-auto mr-auto shadow-xl text-xl">
             Start Learning Now!
           </button>
         </div>
