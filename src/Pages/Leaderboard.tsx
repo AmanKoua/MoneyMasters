@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Drawer from "../Components/Drawer";
 
 import { ProfileContext } from "../Context/ProfileContext";
 
 const Leaderboard = () => {
   const userProfile = useContext(ProfileContext);
-  console.log(userProfile);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      navigate("/login");
+    }
+  }, []);
 
   return (
     <div>
