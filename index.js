@@ -14,10 +14,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/user", userRouter);
-// app.use(express.static('dist'))
+app.use(express.static('dist'))
 
-app.get("*", async (req, res) => {
-    return res.status(200).json({ message: "Hello from MoneyMasters" });
+// app.get("*", async (req, res) => {
+//     return res.status(200).json({ message: "Hello from MoneyMasters" });
+// })
+
+app.get('*', (req, res) => {
+    res.setHeader("Content-Type", "application/javascript");
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+    // res.status(200).json({ message: "Hello from prodlodge!" })
 })
 
 mongoose.connect(process.env.MONGO_URI).then(async () => {
