@@ -12,6 +12,7 @@ import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
 import AboutUs from "./Pages/AboutUs";
+import ErrorPage from "./Pages/errorPage";
 
 import "./styles.css";
 
@@ -27,6 +28,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
               <Route path="/aboutus" element={<AboutUs />} />
+              <Route path="error" element={<ErrorPage />} />
             </Routes>
           </div>
         </BrowserRouter>
