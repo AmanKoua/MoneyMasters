@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 /src/styles.css
+/database/testCredential.js
+/database/serviceKeys.json
 node_modules
 dist
 dist-ssr
