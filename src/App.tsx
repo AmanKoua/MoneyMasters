@@ -13,6 +13,7 @@ import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
 import AboutUs from "./Pages/AboutUs";
 import ErrorPage from "./Pages/errorPage";
+import ModulePage from "./Pages/ModulePage";
 
 import "./styles.css";
 
@@ -26,9 +27,11 @@ function App() {
             <Routes>
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/aboutus" element={<AboutUs />} />
-              <Route path="error" element={<ErrorPage />} />
+              <Route path="/modules" element={<ModulePage />} />
+              <Route path="*" element={<ErrorPage />} />
+              
             </Routes>
           </div>
         </BrowserRouter>
