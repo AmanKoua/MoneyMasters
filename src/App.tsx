@@ -15,8 +15,11 @@ import AboutUs from "./Pages/AboutUs";
 import Leaderboard from "./Pages/Leaderboard";
 import ErrorPage from "./Pages/errorPage";
 import ModulePage from "./Pages/ModulePage";
+import BudgetingPage from "./Pages/BudgetingPage";
 
 import "./styles.css";
+import B_1 from "./components/Exercises/Budgeting/B_1";
+import B_2 from "./components/Exercises/Budgeting/B_2";
 
 function App() {
   return (
@@ -31,7 +34,13 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/aboutus" element={<AboutUs />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
-              <Route path="/module" element={<ModulePage />} />
+              <Route path="/modules" element={<ModulePage />} />
+              <Route path="/modules/budgeting" element={<BudgetingPage/>}>
+                <Route index element = {<Navigate replace to="ex1"/>}/>
+                <Route path="ex1" element={<B_1/>} />
+                <Route path="ex2" element={<B_2/>} />
+              </Route>
+
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>
