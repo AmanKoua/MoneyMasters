@@ -50,7 +50,7 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div className="h-1/2 flex flex-row justify-around mt-10 mb-10">
+            <div className=" h-1/2 flex flex-row justify-around mt-10 mb-10">
               <div className="w-4/12">
                 <img
                   src={MinhImg}
@@ -83,6 +83,14 @@ const AboutUs = () => {
                   </h1>
                 </div>
               </div>
+            </div>
+            <div className="w-3/4 h-max ml-auto mr-auto mt-1 flex flex-row justify-around">
+              <p className="text-center text-xl mt-10">
+                The misson of MoneyMasters is to create a place where people can
+                learn about financial concepts to become more financially
+                literate. The project, developed during the UM-Dearborn's 2023
+                Disrupt Reality hackathon aims to do just that.
+              </p>
             </div>
             <div className="h-32 flex flex-row justify-around"></div>
           </div>
