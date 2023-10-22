@@ -70,6 +70,10 @@ const Login = () => {
                   token: json.token,
                 };
                 userProfile.dispatch({ type: "SET", payload: responsePayload });
+
+                setTimeout(() => {
+                  navigate("/");
+                }, 1000);
               } else {
                 setError("Logging in failed!");
               }
