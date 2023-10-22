@@ -29,16 +29,10 @@ function App() {
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/" element={<Home />} />
-<<<<<<< HEAD
               <Route path="/aboutus" element={<AboutUs />} />
-              <Route path="/modules" element={<ModulePage />} />
-              <Route path="*" element={<ErrorPage />} />
-              
-=======
               <Route path="/leaderboard" element={<Leaderboard />} />
-              <Route path="/aboutus" element={<AboutUs />} />
+              <Route path="/module" element={<ModulePage />} />
               <Route path="*" element={<ErrorPage />} />
->>>>>>> 6df8a5f4e5213810a8ca2e1f2aaf2e28fb9fc385
             </Routes>
           </div>
         </BrowserRouter>
