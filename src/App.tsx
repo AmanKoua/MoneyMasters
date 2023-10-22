@@ -21,11 +21,12 @@ import BudgetingPage from "./Pages/BudgetingPage";
 import "./styles.css";
 import B_1 from "./components/Exercises/Budgeting/B_1";
 import B_2 from "./components/Exercises/Budgeting/B_2";
+import B_3 from "./components/Exercises/Budgeting/B_3";
 
 function App() {
   return (
     <>
-      <div className="w-full h-screen scroll-smooth bg-gradient-to-b from-white via-white to-moneyBackgroundBlue overflow-y-hidden">
+      <div className="w-full bg-gradient-to-b from-white via-white to-moneyBackgroundBlue">
         <BrowserRouter>
           <Navbar></Navbar>
           <div>
@@ -33,22 +34,17 @@ function App() {
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/" element={<Home />} />
-<<<<<<< HEAD
               <Route path="/aboutus" element={<AboutUs />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="/modules" element={<ModulePage />} />
+              <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/modules/budgeting" element={<BudgetingPage/>}>
                 <Route index element = {<Navigate replace to="ex1"/>}/>
                 <Route path="ex1" element={<B_1/>} />
                 <Route path="ex2" element={<B_2/>} />
+                <Route path="ex3" element={<B_3/>} />
               </Route>
 
-=======
-              <Route path="/modules" element={<ModulePage />} />
-              <Route path="/leaderboard" element={<Leaderboard />} />
-              <Route path="/aboutus" element={<AboutUs />} />
-              <Route path="/portfolio" element={<Portfolio />} />
->>>>>>> f48c18372524ac284af1486859c995d986206e46
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>
