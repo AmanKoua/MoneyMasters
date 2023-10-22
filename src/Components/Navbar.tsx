@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { ProfileContext } from "../Context/ProfileContext";
+
 import logo from "../assets/MoneyMastersLogo.jpg";
 
 const Navbar = () => {
   const location = useLocation();
+  const profileContext = useContext(ProfileContext);
   const pagesWithoutProfileImg = ["/login", "/signup"];
   const isPageWithoutProfileImg = pagesWithoutProfileImg.includes(
     location.pathname
   );
+
+  console.log(profileContext);
 
   // TODO : Implement logic to logout user and change button text depending on authentication status
 

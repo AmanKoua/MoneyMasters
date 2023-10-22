@@ -69,6 +69,7 @@ const Login = () => {
                   payload: json.payload,
                   token: json.token,
                 };
+                localStorage.setItem("user", JSON.stringify(responsePayload));
                 userProfile.dispatch({ type: "SET", payload: responsePayload });
 
                 setTimeout(() => {
