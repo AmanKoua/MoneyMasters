@@ -5,12 +5,15 @@ const fs = require('fs');
 const path = require("path");
 const cors = require('cors');
 
+const userRouter = require("./routes/user");
+
 require('dotenv').config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/user", userRouter);
 // app.use(express.static('dist'))
 
 app.get("*", async (req, res) => {
