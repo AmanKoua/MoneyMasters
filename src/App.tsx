@@ -44,7 +44,6 @@ function App() {
                 <Route path="ex2" element={<B_2/>} />
                 <Route path="ex3" element={<B_3/>} />
               </Route>
-
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>

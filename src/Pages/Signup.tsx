@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ProfileContext } from "../Context/ProfileContext";
+import { backendURL } from "../Context/EnvironmentContext";
 
 const Signup = () => {
   const navigate = useNavigate();
+
+  const userProfile = useContext(ProfileContext);
+
+  const [userEmail, setUserEmail] = useState("");
+  const [userUserName, setUserUserName] = useState("");
+  const [userPass, setUserPass] = useState("");
+
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
     <div className="h-full">
@@ -17,28 +28,76 @@ const Signup = () => {
           <p>Email</p>
           <input
             type="text"
+            value={userEmail}
             placeholder="Enter your email"
             className="w-3/4 bg-gray-300"
+            onChange={(e) => {
+              setUserEmail(e.target.value);
+            }}
           />
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto p-2 flex flex-row justify-between">
           <p>Username</p>
           <input
             type="text"
+            value={userUserName}
             placeholder="Enter your username"
             className="w-3/4 bg-gray-300"
+            onChange={(e) => {
+              setUserUserName(e.target.value);
+            }}
           />
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto p-2 flex flex-row justify-between">
           <p>Password</p>
           <input
-            type="text"
+            type="password"
+            value={userPass}
             placeholder="Enter your password"
             className="w-3/4 bg-gray-300"
+            onChange={(e) => {
+              setUserPass(e.target.value);
+            }}
           />
         </div>
         <div className="w-3/4 h-max ml-auto mr-auto mt-3">
-          <button className="bg-moneyDarkGreen w-full text-4xl pb-2 shadow-md">
+          <button
+            className="bg-moneyDarkGreen w-full text-4xl pb-2 shadow-md"
+            onClick={async () => {
+              setError("");
+              setMessage("");
+
+              const response = await fetch(`${backendURL}/user/signup`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  email: userEmail,
+                  username: userUserName,
+                  password: userPass,
+                }),
+              });
+
+              const json = await response.json();
+
+              if (response.ok) {
+                setMessage("Sucessfully created account!");
+                let responsePayload = {
+                  payload: json.payload,
+                  token: json.token,
+                };
+                localStorage.setItem("user", JSON.stringify(responsePayload));
+                userProfile.dispatch({ type: "SET", payload: responsePayload });
+
+                setTimeout(() => {
+                  navigate("/");
+                }, 1000);
+              } else {
+                setError("Account creation failed!");
+              }
+            }}
+          >
             Signup
           </button>
         </div>
@@ -60,6 +119,16 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      {error && (
+        <div className="ag bg-moneyError w-3/12 ml-auto mr-auto mt-3 border-2 border-red-600 text-center">
+          {error}
+        </div>
+      )}
+      {message && (
+        <div className="ag bg-moneyMessage w-3/12 ml-auto mr-auto mt-3 border-2 border-green-600 text-center">
+          {message}
+        </div>
+      )}
     </div>
   );
 };

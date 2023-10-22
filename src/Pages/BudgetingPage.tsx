@@ -1,9 +1,20 @@
-import React from 'react'
-import Drawer from '../Components/Drawer'
+import React, { useEffect } from "react";
+import Drawer from "../Components/Drawer";
+import { useNavigate } from "react-router-dom";
+
 import { Outlet } from "react-router-dom";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const BudgetingPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      navigate("/login");
+    }
+  }, []);
+
     return (
         <>
             <div className="overflow-y-auto">
@@ -17,8 +28,6 @@ const BudgetingPage = () => {
             </div>
         </>
     )
-}
+};
 
-
-export default BudgetingPage
-
+export default BudgetingPage;

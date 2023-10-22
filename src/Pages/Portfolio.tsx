@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Drawer from "../Components/Drawer";
 
 const Portfolio = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      navigate("/login");
+    }
+  }, []);
+
   let modulesProgressPercentage: Number = 30;
   let userPtsProgressPercentage: Number = 35;
   let userPointCount: Number = 15;
