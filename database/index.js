@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 const dotenv = require('dotenv');
-//const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
+const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
 const admin = require('firebase-admin')
 //const { initializeApp } = require('firebase-admin/app');
 //const firebase = require("firebase")
@@ -44,6 +44,9 @@ const adminDb = admin.firestore()
 const db = adminDb.getFirestore;
 
 function writeDocs(){
+
+    //console.log(Object.keys(adminDb));
+
     const citiesRef = adminDb.getFirestore.collection('cities');
 
     citiesRef.doc('SF').set({
